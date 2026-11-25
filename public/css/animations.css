@@ -1,0 +1,16 @@
+.bg i{position:fixed;width:48vmax;height:48vmax;border-radius:50%;filter:blur(100px);opacity:.3;animation:drift 20s ease-in-out infinite alternate;z-index:-1}
+.bg i:nth-child(1){background:var(--a1);top:-18%;left:-12%}.bg i:nth-child(2){background:var(--a2);bottom:-22%;right:-10%;animation-delay:-7s}.bg i:nth-child(3){background:var(--a3);top:35%;left:38%;opacity:.16;animation-delay:-13s}
+[data-theme=light] .bg i{opacity:.18}
+@keyframes drift{to{transform:translate(9vw,7vh) scale(1.25)}}
+.orb{animation:spin 14s linear infinite,float 6s ease-in-out infinite,hue 12s linear infinite}
+body.thinking .orb{animation:spin 2.2s linear infinite,beat .9s ease-in-out infinite,hue 3s linear infinite}
+body.thinking .box::before{animation:glow 1.2s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}@keyframes float{50%{translate:0 -8px}}@keyframes hue{to{filter:hue-rotate(360deg)}}
+@keyframes beat{50%{scale:1.15}}@keyframes glow{50%{opacity:1;filter:blur(6px)}}
+.grad{animation:flow 6s linear infinite}@keyframes flow{to{background-position:300% 0}}
+.ring{transform-origin:center;animation:spin 18s linear infinite}
+.msg{animation:rise .35s ease}@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+.dots i{display:inline-block;width:8px;height:8px;margin:0 3px;border-radius:50%;background:var(--grad);animation:bounce 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{50%{transform:translateY(-7px)}}
+.caret{display:inline-block;width:8px;height:1em;background:var(--a2);vertical-align:text-bottom;margin-left:2px;animation:blink .8s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
